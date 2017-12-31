@@ -119,7 +119,7 @@ bool Cmd::pause()
     QString id =  QString::number(proc->processId());
     qDebug() << "pausing process: " << id;
     timer->stop();
-    return (system("kill -TSTP " + id.toUtf8()) == 0);
+    return (system("kill -STOP " + id.toUtf8()) == 0);
 }
 
 // resume process

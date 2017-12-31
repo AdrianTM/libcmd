@@ -18,26 +18,26 @@ Changes:
  .
    * Initial release.
 Checksums-Sha1:
- 0f4030ec6f944d236aa94c3e3d314d95d964a787 1020 libcmd_0.18.1.dsc
- 4b420060cc41046beae2396a1545cfb9df5093d5 3212 libcmd_0.18.1.tar.xz
- d48fd2b758367f464388153f0bed3201c62075b3 13278 libcmd_0.18.1_amd64.deb
+ 6be3dcdacd05c55b38a048004bbc3745729b397b 1023 libcmd_0.18.1.dsc
+ d44a14932ac0d48c04e6155eb242f6d7aeb930b9 13192 libcmd_0.18.1.tar.xz
+ afacc97f7bd3d00a6f9bc90f794277d1491a310d 13304 libcmd_0.18.1_amd64.deb
 Checksums-Sha256:
- d607f69a7a9f70becc7605ca425e5d82df688dd62a9db29ec5cb4fe092b2ce1d 1020 libcmd_0.18.1.dsc
- 1feea9e65ec2d2414d7a68ed5a5e8b8d32fb331fa06c17229cefa1b5bb207a4e 3212 libcmd_0.18.1.tar.xz
- be32628e41770b9f7e3758dcd50b4c7a02a57fa48af72fefec139fa463c187b8 13278 libcmd_0.18.1_amd64.deb
+ aaf3cf01b1f748f2a9dd2da9234d5dd2924bf48408ea3ede82c7e4b7c44a91d8 1023 libcmd_0.18.1.dsc
+ 51d529f731864babc6b7640e017b2ca6a9a7cfc33a287903d0f0b2a2e5d09375 13192 libcmd_0.18.1.tar.xz
+ c1ae1cf4b68ff0efd7aa7a16785c7a06680ce5c5cc9080ae54ce63dc747e327a 13304 libcmd_0.18.1_amd64.deb
 Files:
- d0b75fb878d77c274a38a7e0cba30db5 1020 admin optional libcmd_0.18.1.dsc
- f5b03099016d76d0cf03bf2aab575f0e 3212 admin optional libcmd_0.18.1.tar.xz
- ffaa5e8373121318b14f1664b331fe39 13278 admin optional libcmd_0.18.1_amd64.deb
+ 8b26c2a31aa34e4ee90dd2b9de8b2e34 1023 admin optional libcmd_0.18.1.dsc
+ 75724fc97841eacecbdd7d9a0b943a7c 13192 admin optional libcmd_0.18.1.tar.xz
+ f9a361e5635894c4ed6e58d06fd9d066 13304 admin optional libcmd_0.18.1_amd64.deb
 
 -----BEGIN PGP SIGNATURE-----
 Version: GnuPG v1
 
-iQEcBAEBAgAGBQJaSSdyAAoJEHCTjHgGee6YIesH/RDNegmi9HG5ogLLV12fUalg
-V9DP+aN/Sn7lcif7qnvfOY3PxlXFIBFunq/I8Xwow5K4grTq4JYihMgXE9zwqHN6
-GCMTY1/OqRDxCKlETsPo6Mr39J8vhsLVsHjYY+NNjZj/xQwx6zwfLIfHpwL1doOK
-Y6BFXqmd1oOkkl0gpujAtvKUNo7sAETecgjYnoRrX2NcbJIICfAA+P11t5oKG/GH
-84V69NMnSMta0CS8vkpOLXN9chZ9zlM2VAk3ccuQA7F9uQi40I7SPZnf5fokS+Y/
-kfTG4wWz+N+VmvcSrMV5iU47JaO6YwHCcHkbhV3TTgaUDD++rSD72JfZnr/78lg=
-=5DKj
+iQEcBAEBAgAGBQJaSV1IAAoJEHCTjHgGee6YKj8H/RWPqm4b63H41+jAiRbHgEv4
+wc9sNygUfkeFX14wUFAfb9bNVmChVJNvAc5SMveZkpdnpNJMtr70K9LGpA+Bdat1
+TYm2bFHuMWhRW2SwPydR3s/NiCPEI2IyPUJltkG4WGjTPyLSJMVDT9yCSYaNPrao
+WNBEwD6fKFZx9yXP53KnQI5xfwgc7HyywgzbXqN9dEFt42r2KXuQRbhO09ffZYXj
+nVnfQyNFUCOi8zLxP7GTDgEB0vbdidHwvlrVb4blC/tLFpYh4dSIGelNgCaAZusr
+s34z85GbG38Dlzp2glFWNU4uQQReQCAtPy6NBZ/+YYAHC2UXmTeXlbDt27VTf1c=
+=cG30
 -----END PGP SIGNATURE-----
