@@ -177,10 +177,8 @@ int Cmd::getExitCode() const
     if (proc->exitStatus() != 0) { // check first if process crashed, it might still return exit code = 0
         qDebug() << "exit status:" << proc->exitStatus();
         return proc->exitStatus();
-    } else if (proc->exitCode() != 0) {
+    } else {
         qDebug() << "exit code:" << proc->exitCode();
         return proc->exitCode();
-    } else {
-        return 0;
     }
 }
