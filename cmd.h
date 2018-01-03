@@ -24,6 +24,8 @@
 #ifndef CMD_H
 #define CMD_H
 
+#include <QFile>
+#include <QFileSystemWatcher>
 #include <QProcess>
 #include <QTimer>
 #include <QTextStream>
@@ -38,13 +40,17 @@ public:
     ~Cmd();
 
     bool isRunning() const;
+    bool connectFifo(const QString &file_name);
     int getExitCode() const;
     int run(const QString &cmd_str, int est_duration = 10); // with optional estimated time of completion (1sec default)
+    void disconnectFifo();
+
     QString getOutput() const;
     QString getOutput(const QString &cmd_str);
 
 signals:
     void finished(int exit_code, QProcess::ExitStatus exit_status);
+    void fifoChangeAvailable(const QString &output);
     void outputAvailable(const QString &output);
     void runTime(int, int); // runtime counter with estimated time in deciseconds
     void started();
@@ -54,15 +60,20 @@ public slots:
     bool pause();
     bool resume();
     bool terminate();
+    void writeToProc(const QString &str);
+    void writeToFifo(const QString &str);
 
 private slots:
+    void fifoChanged();
     void onStdoutAvailable();
-    void tick(); // slot called by timer that emits a counter
+    void tick();      // slot called by timer
 
 private:
     int elapsed_time; // elapsed running time in deciseconds
     int est_duration; // estimated completion time in deciseconds
     QByteArray line_out;
+    QFile fifo;       // named pipe used for interprocess communication
+    QFileSystemWatcher file_watch;
     QString output;
     QTextStream buffer;
     QProcess *proc;

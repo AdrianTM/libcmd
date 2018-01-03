@@ -38,6 +38,7 @@ Cmd::Cmd(QObject *parent) :
 
 Cmd::~Cmd()
 {
+    disconnectFifo();
     if (this->isRunning()) {
         if(!this->terminate()) {
             this->kill();
@@ -109,6 +110,38 @@ bool Cmd::terminate()
     return (!this->isRunning());
 }
 
+void Cmd::writeToProc(const QString &str)
+{
+  if (!this->isRunning()) {
+    return;
+  }
+  proc->write(str.toUtf8());
+  proc->write("\n");
+}
+
+void Cmd::writeToFifo(const QString &str)
+{
+    if (!fifo.exists()) {
+        qDebug() << "Fifo file" << fifo.fileName() << "could not be found";
+        return;
+    }
+    file_watch.blockSignals(true);
+    fifo.write(str.toUtf8() + "\n");
+    fifo.flush();
+    file_watch.blockSignals(false);
+}
+
+// emit a string signal when FIFO file changed
+void Cmd::fifoChanged()
+{
+    QString out;
+    fifo.seek(0);
+    out = fifo.readAll().trimmed();
+    if (!out.isEmpty()) {
+        emit fifoChangeAvailable(out);
+    }
+}
+
 // pause process
 bool Cmd::pause()
 {
@@ -170,6 +203,30 @@ bool Cmd::isRunning() const
     return (proc->state() != QProcess::NotRunning) ? true : false;
 }
 
+// set a Fifo file to be used for interprocess communication
+bool Cmd::connectFifo(const QString &file_name)
+{
+    if (fifo.fileName() != file_name) {
+        fifo.setFileName(file_name);
+    }
+    if (fifo.isOpen()) {
+        return true;
+    }
+    if (fifo.open(QFile::ReadWrite)) {
+        file_watch.addPath(file_name);
+        connect(&file_watch, &QFileSystemWatcher::fileChanged, this, &Cmd::fifoChanged);
+        return true;
+    }
+    return false;
+}
+
+void Cmd::disconnectFifo()
+{
+    if (fifo.isOpen()) {
+        file_watch.disconnect();
+        fifo.close();
+    }
+}
 
 // get the exit code of the finished process
 int Cmd::getExitCode() const
