@@ -18,26 +18,26 @@ Changes:
  .
    * Initial release.
 Checksums-Sha1:
- 156585b711e380fcc1c046506f97aa970c67ccb0 1020 libcmd_0.18.1.dsc
- 72224bb165b66c37bea6fdcfac4a1fbe2a91d461 3616 libcmd_0.18.1.tar.xz
- 58cf451686081556e963f84b08e764b419d31bad 15452 libcmd_0.18.1_amd64.deb
+ c7ff69618bf5990a67882e8e544ca9b8b2fa89b5 1020 libcmd_0.18.1.dsc
+ 1427bbb7b1e0d0513e58546febb0d93f0f2a4af5 3632 libcmd_0.18.1.tar.xz
+ b002dd521fcf7f558018386fc0e537108cb9ba95 15368 libcmd_0.18.1_amd64.deb
 Checksums-Sha256:
- 0dda4e4e823aef454b45b67be60273b7f875ea4a74ce307e14b5e867a9d8cfc3 1020 libcmd_0.18.1.dsc
- 8d9070e204e350b9e2b2ab82dbdcb0757e9488881d45e66a409f401fccadb7cf 3616 libcmd_0.18.1.tar.xz
- fe9944274e94b01446a20496f495ed0301da363044903d91f719bef43517c266 15452 libcmd_0.18.1_amd64.deb
+ a89a1156510ea5f7e012139383660678b30f06ee7675d8b3cf47ed823078332c 1020 libcmd_0.18.1.dsc
+ 0829bd64c248942367fa6a54b0bef9f57aff0f5d5c6d4054356e020b119f7bee 3632 libcmd_0.18.1.tar.xz
+ c23a48ca33726b143167478417dba3ba0ddc1da0f7f2d58c002cd0e3a606bc53 15368 libcmd_0.18.1_amd64.deb
 Files:
- 296fd4147464be1376ae6170084f63b3 1020 admin optional libcmd_0.18.1.dsc
- fee4204643407937ae16e9d0f6555ad7 3616 admin optional libcmd_0.18.1.tar.xz
- 83526db442bbb999a6eebe3e588bb997 15452 admin optional libcmd_0.18.1_amd64.deb
+ 1dfbd6addc6df4fc2968b9b5652c77af 1020 admin optional libcmd_0.18.1.dsc
+ 58785246bf5e1d325c9d4375c7341584 3632 admin optional libcmd_0.18.1.tar.xz
+ 5619c8de94bd564efa564c46ec22a251 15368 admin optional libcmd_0.18.1_amd64.deb
 
 -----BEGIN PGP SIGNATURE-----
 Version: GnuPG v1
 
-iQEcBAEBAgAGBQJaTFUxAAoJEHCTjHgGee6YalUH/1vhEtL8BG6Bm0mcuhoEUDgV
-xjv4ANPI+4SdkduRQVaP7JNB+fWv0RtGH5WptaeF/M5nMI6yUSivf/nJoh04hUJ5
-cVz+SGDc7Yse2coELUDa7i/bW92CI3cVmuwKu3hwejSmJ5p4+ShGKUaGb/qoO1n/
-8ngu+s588wOL9KdcmeNs7Bo6pLFWqYafRcczJa2OU1YcoCATjDhBjKi0DwezEhz6
-u0LN4VWJC2NsXLVz+teLpvnIbxlt/LFZmcWo+iXsY1e571msb5Nmd9BEr/UgU3Rf
-kMQWU0MHANNKPTBLf6bgZaJT6MEaESkUvjWZyI08IH6RifCnjff43iCTD4wwU4w=
-=QDQJ
+iQEcBAEBAgAGBQJaT+OUAAoJEHCTjHgGee6YSkIH/iG/wiVoqktH/DbNwofU2wnS
+Evo6t70McaEKiOKxmu7iEHFR9MrW6dx9RY2oiRpmD34nEEPBLOIrm52yM6+FAumr
+k3c+hmzOIyOxDlR3KcqeFXI2CpNL0d3Wrrf4YUGVFVnIMbdCM8eNJNx/Jr6LSppM
+ubug7i2wA7TfBIxG9PETZzrap1bvK4fnVcG0/NPdMGSoMFU4oj/xMw9DCJEBX+Ge
+mx5sSYRK24pYXznte1v5i5DfAgdx2Xo0j27uXuoDYib+eJhyFwsoZMQuer3kJVnp
+vGdPgTBjkMZRqmL14je2eLlQTExMDlvUI+P6MjiMTlT56pL5Rp8hKidIcRQTRdQ=
+=m8fB
 -----END PGP SIGNATURE-----

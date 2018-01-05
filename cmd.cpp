@@ -116,7 +116,6 @@ void Cmd::writeToProc(const QString &str)
     return;
   }
   proc->write(str.toUtf8());
-  proc->write("\n");
 }
 
 void Cmd::writeToFifo(const QString &str)
