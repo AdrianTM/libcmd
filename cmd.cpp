@@ -65,7 +65,12 @@ int Cmd::run(const QString &cmd_str, const QStringList &options, int est_duratio
     // start timer when started
     proc->waitForStarted();
     emit started();
-    timer->start(100);
+
+    if (options.contains("slowtick")) {
+        timer->start(1000);
+    } else {
+        timer->start(100);
+    }
 
     QEventLoop loop;
     connect(proc, static_cast<void (QProcess::*)(int)>(&QProcess::finished), &loop, &QEventLoop::quit);

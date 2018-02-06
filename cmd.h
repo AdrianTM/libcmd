@@ -42,7 +42,7 @@ public:
     bool isRunning() const;
     bool connectFifo(const QString &file_name);
     int getExitCode(bool quiet = false) const;
-    int run(const QString &cmd_str, const QStringList &options = QStringList(""), int est_duration = 10); // with optional estimated time of completion (1sec default)
+    int run(const QString &cmd_str, const QStringList &options = QStringList(""), int est_duration = 10); // with optional estimated time of completion
     void disconnectFifo();
 
     QString getOutput() const;
@@ -52,7 +52,7 @@ signals:
     void finished(int exit_code, QProcess::ExitStatus exit_status);
     void fifoChangeAvailable(const QString &output);
     void outputAvailable(const QString &output);
-    void runTime(int, int); // runtime counter with estimated time in deciseconds
+    void runTime(int, int); // runtime counter with estimated time
     void started();
 
 public slots:
@@ -69,8 +69,8 @@ private slots:
     void tick();      // slot called by timer
 
 private:
-    int elapsed_time; // elapsed running time in deciseconds
-    int est_duration; // estimated completion time in deciseconds
+    int elapsed_time; // elapsed running time
+    int est_duration; // estimated completion time
     QByteArray line_out;
     QFile fifo;       // named pipe used for interprocess communication
     QFileSystemWatcher file_watch;

@@ -12,20 +12,20 @@ Build-Depends: debhelper (>= 7.0.50~)
 Package-List:
  libcmd deb admin optional arch=any
 Checksums-Sha1:
- 7d5676a456b47cb7c7075d5de65a28f162befc7f 3732 libcmd_0.18.2.tar.xz
+ a65ed3e77ddd009cd3ea6d5017db8b8766f21b27 3728 libcmd_0.18.2.tar.xz
 Checksums-Sha256:
- f210f0846a0fdb17f26e3e5b6c4b3403461a22ce35286dab6b4db890dd9d67cf 3732 libcmd_0.18.2.tar.xz
+ ab51bab046d72c395c21ad9b783eff92983d058d0183d317096e75afab5de6ab 3728 libcmd_0.18.2.tar.xz
 Files:
- 1d92ab130420d7af5de1f0406dc0d541 3732 libcmd_0.18.2.tar.xz
+ 32139ce3ce30813f73bed02ae7f74acb 3728 libcmd_0.18.2.tar.xz
 
 -----BEGIN PGP SIGNATURE-----
 Version: GnuPG v1
 
-iQEcBAEBAgAGBQJaeR+xAAoJEHCTjHgGee6YNEcH/1ULcsD5SFCEobp1Si6LFeIS
-6czlQZalgDlr15inSDhKhDslvEUML/BhoCQ78fvPG8jBtc9HNhgojS3hBw7sQPxp
-m2c5/6YG/PRJBiq8X/BoC8zVbvuKk2U2n6FDwjAfiCdtxzRc+I+0E1XPfxfyKTpC
-EY33qw7PqKg6HANz+SNREuvz/l594acEK6zTH2wpsqM/VVGhsVcm/8bNqjhG03GQ
-c0cl/L4NGSTBs7JZf6TH2OXHXSq0BlIIqBtAy85ZLIxtq1L+AuqeLlLuRYtMOuxj
-OT8BezcUknAh/vmds2IR03Y7Kefx1fDGKuiOKFGbjUyXQGVa3LvjDZEgg8UzKhM=
-=08k0
+iQEcBAEBAgAGBQJaeUoVAAoJEHCTjHgGee6Y6cIIAJOREq64n9qkwpo8tRHX7ZG9
+Iqltskh7TyiaDMdXkv/qtmIiwU83RbrjnM11cqnMiejS6U4kiP3iTPAuEjXUgHtq
+0rPArx0fm29Kb1PLgiDpDEcHdUaFCMXa4I/jPSGsxA4pgEvY2gclBGLSW6csunj8
+PzH6fZRUqmqMIMRb+Q/OX73vsNjJjreaKMgwE9AhadO3MCngaOfU1dcjSukLyl7v
+v172JzwhaMtGTXZCl9RYEHEcr0b7/fn4oJL7lOIeyWqE65lzl7JSrW3EtxYQXVY0
+UquRPscWmzYRWNyhCXc5WZzBQs4bpTx+VQkk6KAH98fqjdvJCElqKHV/C67oEx0=
+=IPBQ
 -----END PGP SIGNATURE-----

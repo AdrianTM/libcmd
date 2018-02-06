@@ -18,26 +18,26 @@ Changes:
  .
    * 'quiet' option: stop printing the commands to the stdout
 Checksums-Sha1:
- fe7835c258e02166ff407b3f3501d1d98cd9ac95 1020 libcmd_0.18.2.dsc
- 7d5676a456b47cb7c7075d5de65a28f162befc7f 3732 libcmd_0.18.2.tar.xz
- 4f3403391b56d2d000ae3c09218b61d8bdc9a1b0 15690 libcmd_0.18.2_amd64.deb
+ 721d9b6a653dcf788f0615dfd6c0ceb4b1b5ed22 1020 libcmd_0.18.2.dsc
+ a65ed3e77ddd009cd3ea6d5017db8b8766f21b27 3728 libcmd_0.18.2.tar.xz
+ 15dd9eee1e583057e3ea24f5fb0d7b6892fa9bf1 15722 libcmd_0.18.2_amd64.deb
 Checksums-Sha256:
- 1f49036608211fc3589d52fee332074ce3f8636d01915d7c08a260420cb653d6 1020 libcmd_0.18.2.dsc
- f210f0846a0fdb17f26e3e5b6c4b3403461a22ce35286dab6b4db890dd9d67cf 3732 libcmd_0.18.2.tar.xz
- b4511ddfad7f54f1956a135b5b17e551ccf7853a595afae541cd49f8874c4721 15690 libcmd_0.18.2_amd64.deb
+ 3c3c0abe5c3b946657216fcb78d16521e951d90b32a5fbb98124ffd991ee9cea 1020 libcmd_0.18.2.dsc
+ ab51bab046d72c395c21ad9b783eff92983d058d0183d317096e75afab5de6ab 3728 libcmd_0.18.2.tar.xz
+ fabb0a0c0c91fda34932cd03b01b6661785fef43f76d986c74d2a092a8d4064c 15722 libcmd_0.18.2_amd64.deb
 Files:
- 24676c9c50fd35c9a367f377d43476c8 1020 admin optional libcmd_0.18.2.dsc
- 1d92ab130420d7af5de1f0406dc0d541 3732 admin optional libcmd_0.18.2.tar.xz
- 1c23deede95e7b7a6b2bee62ff3d2642 15690 admin optional libcmd_0.18.2_amd64.deb
+ 3ba5ea3ddb2e98e3a07ed3137315c295 1020 admin optional libcmd_0.18.2.dsc
+ 32139ce3ce30813f73bed02ae7f74acb 3728 admin optional libcmd_0.18.2.tar.xz
+ aa299a4e041f9abaeab5029f39a9f39b 15722 admin optional libcmd_0.18.2_amd64.deb
 
 -----BEGIN PGP SIGNATURE-----
 Version: GnuPG v1
 
-iQEcBAEBAgAGBQJaeR+3AAoJEHCTjHgGee6YTm8H/3LkgtCw2UozvrSDShu+YCN2
-YOQImPXqB7VUPoxxvQZTutILCEvk23DtXHS/C+yVXSUY//5PjUJcd5oNw6uVFHn1
-2UHoHkfEitEG/Ad50zJApKj2WgBnX/xtMBGRXNvi7kDisdXrp9sxgGiQoxroL1y3
-D/cK/XlHz7gJNR2DyRNvjeLwOHStJMMvbum/wOXu4bQ/WuqLsEDJGRJ+2A/lfbKP
-TdZiEC9zXsATBkvBiowu85enGw/M0fAA4pzhKnazcdfbjXxyGq1HWSCGO7frcGvm
-TyvNx7zztmJVOz2RO5OG600Xsj/V+Wxan72v9WdroiZ6NUsyS2+NuCopknd4jxw=
-=DD66
+iQEcBAEBAgAGBQJaeUoaAAoJEHCTjHgGee6Ynv0H+wdevCUAd9G6l3Nxs2gITJau
+KpKqxlgirxDADDmVPRsDtM21WeC2XqVfOFSve/KkJNEc8NxNVSub2q2efpB5s04O
+8z0/dduxLUK6nL4iKz0ikWxdpcYlyjFhI2lDeHUio+cvAQjrxVQ30ddMBCTfIR8Q
+9ZxOH4fLjuSFyvB98mEzJjZgN5UnON1JG2CDMVdWu317BHu6u4kfNrjkO536loGO
+KysNvCb75VvR6/gv/gNlJkDYO/GDvcoAbEB+7SLmroD9ALAjoxH05kzIKVplkHra
+vB34Ruk/2s7mM6SQhbNODiEooIlrsVZfh+mPJEtDKaa+ZfGctrSpOa/q25XaaMM=
+=KS5v
 -----END PGP SIGNATURE-----
