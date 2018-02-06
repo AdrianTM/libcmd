@@ -41,12 +41,12 @@ public:
 
     bool isRunning() const;
     bool connectFifo(const QString &file_name);
-    int getExitCode() const;
-    int run(const QString &cmd_str, int est_duration = 10); // with optional estimated time of completion (1sec default)
+    int getExitCode(bool quiet = false) const;
+    int run(const QString &cmd_str, const QStringList &options = QStringList(""), int est_duration = 10); // with optional estimated time of completion (1sec default)
     void disconnectFifo();
 
     QString getOutput() const;
-    QString getOutput(const QString &cmd_str);
+    QString getOutput(const QString &cmd_str, const QStringList &options = QStringList(""), int est_duration = 10);
 
 signals:
     void finished(int exit_code, QProcess::ExitStatus exit_status);

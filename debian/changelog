@@ -1,3 +1,9 @@
+libcmd (0.18.2) mx; urgency=medium
+
+  * 'quiet' option: stop printing the commands to the stdout
+
+ -- Adrian <adrian@mxlinux.org>  Mon, 05 Feb 2018 22:06:34 -0500
+
 libcmd (0.18.1) mx; urgency=medium
 
   * Initial release.

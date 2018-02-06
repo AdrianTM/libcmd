@@ -47,7 +47,7 @@ Cmd::~Cmd()
 }
 
 // this function is running the command, takes cmd_str and optional estimated completion time
-int Cmd::run(const QString &cmd_str, int est_duration)
+int Cmd::run(const QString &cmd_str, const QStringList &options, int est_duration)
 {
     if (this->isRunning()) { // allow only one process at a time
         qDebug() << "process already running";
@@ -70,7 +70,10 @@ int Cmd::run(const QString &cmd_str, int est_duration)
     QEventLoop loop;
     connect(proc, static_cast<void (QProcess::*)(int)>(&QProcess::finished), &loop, &QEventLoop::quit);
     QTextStream out(stdout);
-    out << proc->arguments().at(1) << endl;
+
+    bool quiet = options.contains("quiet");
+    if (!quiet) out << proc->arguments().at(1) << endl;
+
     loop.exec();
 
     // kill process if still running after loop finished
@@ -81,7 +84,7 @@ int Cmd::run(const QString &cmd_str, int est_duration)
     }
 
     emit finished(proc->exitCode(), proc->exitStatus());
-    return getExitCode();
+    return getExitCode(quiet);
 }
 
 // kill process, return true for success
@@ -90,7 +93,7 @@ bool Cmd::kill()
     if (!this->isRunning()) {
         return true; // returns true because process is not running
     }
-    qDebug() << "killing parent process:" << proc->pid();
+    qDebug() << "killing parent process:" << proc->processId();
     proc->kill();
     proc->waitForFinished(1000);
     emit finished(proc->exitCode(), proc->exitStatus());
@@ -103,7 +106,7 @@ bool Cmd::terminate()
     if (!this->isRunning()) {
         return true; // returns true because process is not running
     }
-    qDebug() << "terminating parent process:" << proc->pid();
+    qDebug() << "terminating parent process:" << proc->processId();
     proc->terminate();
     proc->waitForFinished(1000);
     emit finished(proc->exitCode(), proc->exitStatus());
@@ -174,9 +177,9 @@ QString Cmd::getOutput() const
 }
 
 // runs the command passed as argument and return output
-QString Cmd::getOutput(const QString &cmd_str)
+QString Cmd::getOutput(const QString &cmd_str,  const QStringList &options, int est_duration)
 {
-    this->run(cmd_str);
+    this->run(cmd_str, options, est_duration);
     return output.trimmed();
 }
 
@@ -228,13 +231,13 @@ void Cmd::disconnectFifo()
 }
 
 // get the exit code of the finished process
-int Cmd::getExitCode() const
+int Cmd::getExitCode(bool quiet) const
 {
     if (proc->exitStatus() != 0) { // check first if process crashed, it might still return exit code = 0
-        qDebug() << "exit status:" << proc->exitStatus();
+        if (!quiet) qDebug() << "exit status:" << proc->exitStatus();
         return proc->exitStatus();
     } else {
-        qDebug() << "exit code:" << proc->exitCode();
+        if (!quiet) qDebug() << "exit code:" << proc->exitCode();
         return proc->exitCode();
     }
 }
