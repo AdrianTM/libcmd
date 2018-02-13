@@ -26,7 +26,7 @@
 #include "cmd.h"
 
 Cmd::Cmd(QObject *parent) :
-    QObject(parent), buffer(&output)
+    QObject(parent), buffer_out(&out), buffer_err(&err)
 {
     proc = new QProcess(this);
     timer = new QTimer(this);
@@ -34,6 +34,7 @@ Cmd::Cmd(QObject *parent) :
     connect(timer, &QTimer::timeout, this, &Cmd::tick);
     connect(proc, static_cast<void (QProcess::*)(int)>(&QProcess::finished), timer, &QTimer::stop);
     connect(proc, &QProcess::readyReadStandardOutput, this, &Cmd::onStdoutAvailable);
+    connect(proc, &QProcess::readyReadStandardError, this, &Cmd::onStderrAvailable);
 }
 
 Cmd::~Cmd()
@@ -57,8 +58,8 @@ int Cmd::run(const QString &cmd_str, const QStringList &options, int est_duratio
     // reset variables if function is reused
     this->est_duration = est_duration;
     this->elapsed_time = 0;  // reset time counter
-    this->output.clear();
-    this->line_out.clear();
+    this->out.clear();
+    this->err.clear();
 
     proc->start("/bin/bash", QStringList() << "-c" << cmd_str);
 
@@ -178,14 +179,14 @@ bool Cmd::resume()
 // get the output of the command
 QString Cmd::getOutput() const
 {
-    return output.trimmed();
+    return out.trimmed();
 }
 
 // runs the command passed as argument and return output
 QString Cmd::getOutput(const QString &cmd_str,  const QStringList &options, int est_duration)
 {
     this->run(cmd_str, options, est_duration);
-    return output.trimmed();
+    return out.trimmed();
 }
 
 // on std out available emit the output
@@ -195,7 +196,16 @@ void Cmd::onStdoutAvailable()
     if (line_out != "") {
         emit outputAvailable(line_out);
     }
-    buffer << line_out;
+    buffer_out << line_out;
+}
+
+void Cmd::onStderrAvailable()
+{
+    line_err = proc->readAllStandardError();
+    if (line_err != "") {
+        emit errorAvailable(line_err);
+    }
+    buffer_err << line_err;
 }
 
 // slot called by timer that emits a counter and the estimated duration to be used by progress bar
@@ -233,6 +243,11 @@ void Cmd::disconnectFifo()
         file_watch.disconnect();
         fifo.close();
     }
+}
+
+QString Cmd::getError() const
+{
+    return err.trimmed();
 }
 
 // get the exit code of the finished process

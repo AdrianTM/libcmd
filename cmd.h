@@ -45,13 +45,16 @@ public:
     int run(const QString &cmd_str, const QStringList &options = QStringList(""), int est_duration = 10); // with optional estimated time of completion
     void disconnectFifo();
 
+    QString getError() const;
     QString getOutput() const;
     QString getOutput(const QString &cmd_str, const QStringList &options = QStringList(""), int est_duration = 10);
 
+
 signals:
     void finished(int exit_code, QProcess::ExitStatus exit_status);
-    void fifoChangeAvailable(const QString &output);
-    void outputAvailable(const QString &output);
+    void fifoChangeAvailable(const QString &out);
+    void errorAvailable(const QString &err);
+    void outputAvailable(const QString &out);
     void runTime(int, int); // runtime counter with estimated time
     void started();
 
@@ -66,16 +69,17 @@ public slots:
 private slots:
     void fifoChanged();
     void onStdoutAvailable();
+    void onStderrAvailable();
     void tick();      // slot called by timer
 
 private:
     int elapsed_time; // elapsed running time
     int est_duration; // estimated completion time
-    QByteArray line_out;
     QFile fifo;       // named pipe used for interprocess communication
     QFileSystemWatcher file_watch;
-    QString output;
-    QTextStream buffer;
+    QString out, err;
+    QString line_out, line_err;
+    QTextStream buffer_out, buffer_err;
     QProcess *proc;
     QTimer *timer;
 

@@ -1,3 +1,9 @@
+libcmd (0.18.2.1) mx; urgency=medium
+
+  * add stderr
+
+ -- Adrian <adrian@mxlinux.org>  Mon, 12 Feb 2018 23:03:35 -0500
+
 libcmd (0.18.2) mx; urgency=medium
 
   * 'quiet' option: stop printing the commands to the stdout

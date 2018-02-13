@@ -1,0 +1,43 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+Format: 1.8
+Date: Mon, 12 Feb 2018 23:03:35 -0500
+Source: libcmd
+Binary: libcmd
+Architecture: source amd64
+Version: 0.18.2.1
+Distribution: mx
+Urgency: medium
+Maintainer: Adrian <adrian@mxlinux.org>
+Changed-By: Adrian <adrian@mxlinux.org>
+Description:
+ libcmd     - Cmd library for running bash commands in Qt apps
+Changes:
+ libcmd (0.18.2.1) mx; urgency=medium
+ .
+   * add stderr
+Checksums-Sha1:
+ 4a36fe58e7625330fbd8003f4678806632ea1a0d 1028 libcmd_0.18.2.1.dsc
+ a373a4a4bf5eb83e6fc1e3c04185ddb7d4fb3bce 3828 libcmd_0.18.2.1.tar.xz
+ cc97ca1ba2eb29bdb583378fd4e9a2f36e4487ed 16286 libcmd_0.18.2.1_amd64.deb
+Checksums-Sha256:
+ 545270b17b1aade67c06d2adc0fac2f29b0ec74938232e4f3d5a10342d9b3419 1028 libcmd_0.18.2.1.dsc
+ a980bbf40d702448685d3f44f318da32d23e52eb3aba4e1a63c739b3aea95df0 3828 libcmd_0.18.2.1.tar.xz
+ bfe0bb66fd52674b8062859668842c7596b67aab5c1b2b892acd5d4518cf4a97 16286 libcmd_0.18.2.1_amd64.deb
+Files:
+ 702bce13f17b764281dbf3b9d1e5b972 1028 admin optional libcmd_0.18.2.1.dsc
+ 37f0d583d27c0185948a8c7e72844213 3828 admin optional libcmd_0.18.2.1.tar.xz
+ 461c8bc13c15fc680560d591d287c330 16286 admin optional libcmd_0.18.2.1_amd64.deb
+
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1
+
+iQEcBAEBAgAGBQJagmUIAAoJEHCTjHgGee6YW7YH/3xtNHb0mqYTC+2XBnEhgIef
+QhJA1cSNupf2JcTGYNsYhJh9LNj6fmtL3Fn3rBR8VGENHpwTNf6jX79byFyZLT+D
+7VL8y/wECD4nJkyHYDClbCB/sAjCW3+4umXm5Rk53FXisau6atO+4nt2gliflp3y
+2wZMGnhXiJQVS70H8wl58qXMhf0HZ1fsIdRGNA2uArabyci/lW6+98tYBPlA+I2t
+GtfD2WIMHN6tkmKpcSN/B4GzmBr+LqY6kHTPbIHBRx7lVJuzjZQXuPmU3vSXp4YV
+zanmMspBMsGxQPZVPJL5T3TJHZYvlJMJmCDCLEa74ODc0GyyJaf8kqskzclBF1g=
+=fYWw
+-----END PGP SIGNATURE-----
