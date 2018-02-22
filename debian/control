@@ -2,8 +2,8 @@ Source: libcmd
 Section: admin
 Priority: optional
 Maintainer: Adrian <adrian@mxlinux.org>
-Build-Depends: debhelper (>=7.0.50~)
-Standards-Version: 3.9.5
+Build-Depends: debhelper (>=9)
+Standards-Version: 3.9.8
 
 Package: libcmd
 Architecture: any
