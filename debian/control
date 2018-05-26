@@ -2,12 +2,12 @@ Source: libcmd
 Section: admin
 Priority: optional
 Maintainer: Adrian <adrian@mxlinux.org>
-Build-Depends: debhelper (>=9)
+Build-Depends: debhelper (>=9), debhelper (>= 9), qt5-default, qt5-qmake, qtbase5-dev
 Standards-Version: 3.9.8
 
 Package: libcmd
 Architecture: any
-Depends:
+Depends: ${misc:Depends}, ${shlibs:Depends}
 Description: Cmd library for running bash commands in Qt apps
   This is a convenience library for running bash commands in Qt apps
   It runs the commands in a blocking loop, with responsive GUI 
