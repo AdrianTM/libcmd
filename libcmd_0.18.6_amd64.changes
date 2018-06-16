@@ -1,0 +1,43 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA256
+
+Format: 1.8
+Date: Sat, 16 Jun 2018 00:56:33 -0400
+Source: libcmd
+Binary: libcmd
+Architecture: source amd64
+Version: 0.18.6
+Distribution: mx
+Urgency: medium
+Maintainer: Adrian <adrian@mxlinux.org>
+Changed-By: Adrian <adrian@mxlinux.org>
+Description:
+ libcmd     - Cmd library for running bash commands in Qt apps
+Changes:
+ libcmd (0.18.6) mx; urgency=medium
+ .
+   * use QDebug for debuggin purposes
+Checksums-Sha1:
+ 777d3e3b6a9d03472d375af204749f8f74fc868b 1079 libcmd_0.18.6.dsc
+ 06f0c78d96c41b13bdf0f16ceded942f29c40572 3932 libcmd_0.18.6.tar.xz
+ 38c06c372cfb8b38850c1790bd4aedfdcf869a50 16426 libcmd_0.18.6_amd64.deb
+Checksums-Sha256:
+ 5ca4b505bc2716c5bf1fe2eb522a509def8b522a2e44f4e47d98978d7bcf4ad6 1079 libcmd_0.18.6.dsc
+ 42f22ee36270c99797d17a269d89ced47aa5c468da1c16ad580cc6e4693a8b61 3932 libcmd_0.18.6.tar.xz
+ 7b5f2c3fcbfecfe7aa333c7de00c909ec7fe344d14adb32f9442a6af7e188cbf 16426 libcmd_0.18.6_amd64.deb
+Files:
+ fca6f55069e366a73e25021e7a75a729 1079 admin optional libcmd_0.18.6.dsc
+ 391599130fee0e2f1c767d2923651308 3932 admin optional libcmd_0.18.6.tar.xz
+ 31211098494c926823668312ead4ed22 16426 admin optional libcmd_0.18.6_amd64.deb
+
+-----BEGIN PGP SIGNATURE-----
+
+iQFHBAEBCAAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAlskm0kTHGFkcmlhbkBt
+eGxpbnV4Lm9yZwAKCRBwk4x4BnnumNuQB/9KCK9wdRmSbZ2PuXKXemEWsBfT6JX5
+oI2sYV7XK3RxW8SY6K/9jmBz8TiCXanke5DM5ocBGIb3ccQSI5sf1iITZxKrJ7vT
+SuLdHLRuZeKSiPY2oJq215hPeFlIrGNOYNHVKBa0TJiYFYBHg1ax+B9WACfEA0e/
+Z9khw57gHr1nXhs5+3vJRT2qm93m7ZXJ8b5iVAKutO4wy7YnZkQUxQmvxeo/2ad7
+lcBh5JQliN2r2DhtewJTVBHFUWxsoRHElsgROW08X084BFfIJQ2+AtkFJLSDAnUo
+5evj11k3UrF9jo0LZi3PHJ2EGnykIX86g9xnDMsRiHj4BP/l0KcIbF2X
+=Ma/i
+-----END PGP SIGNATURE-----

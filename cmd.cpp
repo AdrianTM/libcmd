@@ -75,10 +75,9 @@ int Cmd::run(const QString &cmd_str, const QStringList &options, int est_duratio
 
     QEventLoop loop;
     connect(proc, static_cast<void (QProcess::*)(int)>(&QProcess::finished), &loop, &QEventLoop::quit);
-    QTextStream out(stdout);
 
     bool quiet = options.contains("quiet");
-    if (!quiet) out << proc->arguments().at(1) << endl;
+    if (!quiet) qDebug() << proc->arguments().at(1);
 
     loop.exec();
 
