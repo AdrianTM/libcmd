@@ -51,7 +51,7 @@ Cmd::~Cmd()
 int Cmd::run(const QString &cmd_str, const QStringList &options, int est_duration)
 {
     if (this->isRunning()) { // allow only one process at a time
-        qDebug() << "process already running";
+        if(debug >= 1) qDebug() << "process already running";
         return -1;
     }
 
@@ -77,6 +77,8 @@ int Cmd::run(const QString &cmd_str, const QStringList &options, int est_duratio
     connect(proc, static_cast<void (QProcess::*)(int)>(&QProcess::finished), &loop, &QEventLoop::quit);
 
     bool quiet = options.contains("quiet");
+    if (debug < 2) quiet = true;
+    else if (debug > 2) quiet = false;
     if (!quiet) qDebug() << proc->arguments().at(1);
 
     loop.exec();
@@ -98,7 +100,7 @@ bool Cmd::kill()
     if (!this->isRunning()) {
         return true; // returns true because process is not running
     }
-    qDebug() << "killing parent process:" << proc->processId();
+    if (debug >= 1) qDebug() << "killing parent process:" << proc->processId();
     proc->kill();
     proc->waitForFinished(1000);
     emit finished(proc->exitCode(), proc->exitStatus());
@@ -111,7 +113,7 @@ bool Cmd::terminate()
     if (!this->isRunning()) {
         return true; // returns true because process is not running
     }
-    qDebug() << "terminating parent process:" << proc->processId();
+    if (debug >= 1) qDebug() << "terminating parent process:" << proc->processId();
     proc->terminate();
     proc->waitForFinished(1000);
     emit finished(proc->exitCode(), proc->exitStatus());
@@ -129,7 +131,7 @@ void Cmd::writeToProc(const QString &str)
 void Cmd::writeToFifo(const QString &str)
 {
     if (!fifo.exists()) {
-        qDebug() << "Fifo file" << fifo.fileName() << "could not be found";
+        if (debug >= 1) qDebug() << "Fifo file" << fifo.fileName() << "could not be found";
         return;
     }
     file_watch.blockSignals(true);
@@ -153,11 +155,11 @@ void Cmd::fifoChanged()
 bool Cmd::pause()
 {
     if (!this->isRunning()) {
-        qDebug() << "process not running";
+        if (debug >= 1) qDebug() << "process not running";
         return false;
     }
     QString id =  QString::number(proc->processId());
-    qDebug() << "pausing process: " << id;
+    if (debug >= 1) qDebug() << "pausing process: " << id;
     timer->stop();
     return (system("kill -STOP " + id.toUtf8()) == 0);
 }
@@ -167,10 +169,10 @@ bool Cmd::resume()
 {
     QString id =  QString::number(proc->processId());
     if (id == "0") {
-        qDebug() << "process id not found";
+        if (debug >= 1) qDebug() << "process id not found";
         return false;
     }
-    qDebug() << "resuming process:" << id;
+    if (debug >= 1) qDebug() << "resuming process:" << id;
     timer->start();
     return (system("kill -CONT " + id.toUtf8()) == 0);
 }
@@ -252,6 +254,8 @@ QString Cmd::getError() const
 // get the exit code of the finished process
 int Cmd::getExitCode(bool quiet) const
 {
+    if (debug < 2) quiet = true;
+    else if (debug > 2) quiet = false;
     if (proc->exitStatus() != 0) { // check first if process crashed, it might still return exit code = 0
         if (!quiet) qDebug() << "exit status:" << proc->exitStatus();
         return proc->exitStatus();
@@ -259,4 +263,15 @@ int Cmd::getExitCode(bool quiet) const
         if (!quiet) qDebug() << "exit code:" << proc->exitCode();
         return proc->exitCode();
     }
+}
+
+// control debugging messages
+void Cmd::setDebug(int level)
+{
+    debug = level;
+}
+
+int Cmd::getDebug() const
+{
+    return debug;
 }
