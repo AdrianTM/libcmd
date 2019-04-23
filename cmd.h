@@ -53,7 +53,7 @@ public:
     //  0 = do not print any debug info; 1 = print errors and interruptions only
     //  2 = like 1 but also print command info, only if not using "quiet" option
     //  3 = like 1 but also print command info, even if "quiet" option is in use
-    void setDebug(int level = 2);
+    void setDebug(int level);
     int getDebug() const;
 
 signals:
