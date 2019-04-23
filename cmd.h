@@ -49,6 +49,12 @@ public:
     QString getOutput() const;
     QString getOutput(const QString &cmd_str, const QStringList &options = QStringList(""), int est_duration = 10);
 
+    // control debugging messages with level 0 to 3:
+    //  0 = do not print any debug info; 1 = print errors and interruptions only
+    //  2 = like 1 but also print command info, only if not using "quiet" option
+    //  3 = like 1 but also print command info, even if "quiet" option is in use
+    void setDebug(int level = 2);
+    int getDebug() const;
 
 signals:
     void finished(int exit_code, QProcess::ExitStatus exit_status);
@@ -73,6 +79,7 @@ private slots:
     void tick();      // slot called by timer
 
 private:
+    int debug = 2;    // debugging message control
     int elapsed_time; // elapsed running time
     int est_duration; // estimated completion time
     QFile fifo;       // named pipe used for interprocess communication
